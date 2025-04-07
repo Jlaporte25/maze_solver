@@ -1,8 +1,10 @@
-from window import Window
+from graphics import Window, Line, Point
 
 
 def main():
-    win = Window(600, 600)
+    win = Window(800, 600)
+    line = Line(Point(750, 50), Point(400, 400))
+    win.draw_line(line, "black")
     win.wait_for_close()
 
 
