@@ -44,3 +44,19 @@ class Line:
         canvas.create_line(
             self.p1.x, self.p1.y, self.p2.x, self.p2.y, fill=fill_color, width=2
         )
+
+
+class Cell:
+    def __init__(self, has_left_wall, has_right_wall, has_top_wall, has_bottom_wall):
+        self.has_left_wall = has_left_wall
+        self.has_right_wall = has_right_wall
+        self.has_top_wall = has_top_wall
+        self.has_bottom_wall = has_bottom_wall
+        self.__x1 = __x1
+        self.__x2 = __x2
+        self.__y1 = __y1
+        self.__y2 = __y2
+        self.win = win
+
+    def draw(self):
+        pass
