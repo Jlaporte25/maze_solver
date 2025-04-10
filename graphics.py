@@ -47,16 +47,27 @@ class Line:
 
 
 class Cell:
-    def __init__(self, has_left_wall, has_right_wall, has_top_wall, has_bottom_wall):
-        self.has_left_wall = has_left_wall
-        self.has_right_wall = has_right_wall
-        self.has_top_wall = has_top_wall
-        self.has_bottom_wall = has_bottom_wall
-        self.__x1 = __x1
-        self.__x2 = __x2
-        self.__y1 = __y1
-        self.__y2 = __y2
-        self.win = win
+    def __init__(self, top_left_x, top_left_y, bottom_right_x, bottom_right_y, win):
+        self.has_left_wall = True
+        self.has_right_wall = True
+        self.has_top_wall = True
+        self.has_bottom_wall = True
+        self.__x1 = top_left_x
+        self.__y1 = top_left_y
+        self.__x2 = bottom_right_x
+        self.__y2 = bottom_right_y
+        self.__win = win
 
     def draw(self):
-        pass
+        if self.has_left_wall:
+            line1 = Line(Point(self.__x1, self.__y1), Point(self.__x1, self.__y2))
+            self.__win.draw_line(line1, "black")
+        if self.has_right_wall:
+            line2 = Line(Point(self.__x2, self.__y1), Point(self.__x2, self.__y2))
+            self.__win.draw_line(line2, "black")
+        if self.has_top_wall:
+            line3 = Line(Point(self.__x1, self.__y1), Point(self.__x2, self.__y1))
+            self.__win.draw_line(line3, "black")
+        if self.has_bottom_wall:
+            line4 = Line(Point(self.__x1, self.__y2), Point(self.__x2, self.__y2))
+            self.__win.draw_line(line4, "black")
