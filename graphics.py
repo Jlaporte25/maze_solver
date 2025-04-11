@@ -71,3 +71,28 @@ class Cell:
         if self.has_bottom_wall:
             line4 = Line(Point(self.__x1, self.__y2), Point(self.__x2, self.__y2))
             self.__win.draw_line(line4, "black")
+
+    def draw_move(self, to_cell, undo=False):
+        center_x = (self.__x1 + self.__x2) / 2
+        center_y = (self.__y1 + self.__y2) / 2
+        to_cell_center_x = (to_cell.__x1 + to_cell.__x2) / 2
+        to_cell_center_y = (to_cell.__y1 + to_cell.__y2) / 2
+
+        line = Line(
+            Point(center_x, center_y), Point(to_cell_center_x, to_cell_center_y)
+        )
+        if undo:
+            self.__win.draw_line(line, "gray")
+        else:
+            self.__win.draw_line(line, "red")
+
+
+class Maze:
+    def __init__(self, x1, y1, num_rows, num_cols, cell_size_x, cell_size_y, win):
+        self.x1 = x1
+        self.y1 = y1
+        self.num_rows = num_rows
+        self.num_cols = num_cols
+        self.cell_size_x = cell_size_x
+        self.cell_size_y = cell_size_y
+        self.__win = win
