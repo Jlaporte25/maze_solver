@@ -96,3 +96,7 @@ class Maze:
         self.cell_size_x = cell_size_x
         self.cell_size_y = cell_size_y
         self.__win = win
+        self._create_cells()
+
+    def _create_cells(self):
+        pass
