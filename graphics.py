@@ -101,9 +101,17 @@ class Maze:
 
     def _create_cells(self):
         col_list = []
-        for col in self.num_cols:
-            for i in col:
-                col.append(Cell)
-            col_list.append(Cell)
-        self._cells.extend(col_list)
-        return
+        for col in range(0, self.num_cols):
+            current_col = []
+            for row in range(0, self.num_rows):
+                current_col.append(
+                    Cell(
+                        self.x1,
+                        self.y1,
+                        (self.x1 + self.cell_size_x),
+                        (self.y1 + self.cell_size_y),
+                        self.__win,
+                    )
+                )
+            col_list.append(col)
+        self._cells.append(col_list)
