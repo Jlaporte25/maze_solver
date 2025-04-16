@@ -106,10 +106,10 @@ class Maze:
             for row in range(0, self.num_rows):
                 current_col.append(
                     Cell(
-                        self.x1,
-                        self.y1,
-                        (self.x1 + self.cell_size_x),
-                        (self.y1 + self.cell_size_y),
+                        (self.x1 - (self.cell_size_x * row)),
+                        (self.y1 - (self.cell_size_y * row)),
+                        (self.x1 + (self.cell_size_x * row)),
+                        (self.y1 + (self.cell_size_y * row)),
                         self.__win,
                     )
                 )
