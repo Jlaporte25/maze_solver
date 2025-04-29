@@ -57,4 +57,5 @@ class Maze:
         self._draw_cell((self._num_cols - 1), (self._num_rows - 1))
 
     def _break_walls_random(self, i, j):
-        pass
+        for i in self._num_cols:
+            pass
