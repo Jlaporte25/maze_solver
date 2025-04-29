@@ -21,6 +21,7 @@ class Maze:
         self._break_entrance_and_exit()
         if self.seed is not None:
             random.seed(seed)
+        self._break_walls_random()
 
     def _create_cells(self):
         for i in range(self._num_cols):
@@ -58,4 +59,6 @@ class Maze:
 
     def _break_walls_random(self, i, j):
         for i in self._num_cols:
-            pass
+            random_cell = self._cells[(random.seed)][(random.seed)]
+            random_cell.has_bottom_wall = False
+            self._cells[i][j]
