@@ -109,4 +109,7 @@ class Maze:
             self._break_walls_r(next_index[0], next_index[1])
 
     def _reset_visted(self):
-        pass
+        for i in range(self._num_cols):
+            for j in range(self._num_rows):
+                cell = self._cells[i][j]
+                cell.visited = False
