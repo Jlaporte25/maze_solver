@@ -113,3 +113,13 @@ class Maze:
             for j in range(self._num_rows):
                 cell = self._cells[i][j]
                 cell.visited = False
+
+    def _solve(self):
+        self._solve_r(0, 0)
+
+
+    def _solve_r(self, i, j):
+        current_cell = self._cells[i][j]
+        if current_cell == self._cells[(self._num_cols - 1)][(self._num_rows - 1)]:
+            return True
+
