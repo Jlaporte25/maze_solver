@@ -120,6 +120,11 @@ class Maze:
 
     def _solve_r(self, i, j):
         current_cell = self._cells[i][j]
+        self._animate()
+        current_cell.visited = True
         if current_cell == self._cells[(self._num_cols - 1)][(self._num_rows - 1)]:
             return True
+        else:
+            for dir in 
+
 
