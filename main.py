@@ -13,6 +13,10 @@ def main():
     win = Window(screen_x, screen_y)
 
     maze = Maze(margin, margin, num_rows, num_cols, cell_size_x, cell_size_y, win, 0)
+    if maze._solve():
+        print("True")
+    else:
+        print("False")
 
     win.wait_for_close()
 
